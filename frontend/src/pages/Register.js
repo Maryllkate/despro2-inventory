@@ -21,7 +21,7 @@ function Register() {
 
   // Register User
   const registerUser = () => {
-    fetch("https://cec2-backend.onrender.com/api/register", {
+    fetch("https://despro2-inventory.onrender.com/api/register", {
       method: "POST",
       headers: {
         "Content-type": "application/json",

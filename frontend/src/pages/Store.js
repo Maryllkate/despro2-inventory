@@ -14,7 +14,7 @@ function Store() {
 
   // Fetching all stores data
   const fetchData = () => {
-    fetch(`https://cec2-backend.onrender.com/api/store/get/${authContext.user}`)
+    fetch(`https://despro2-inventory.onrender.com/api/store/get/${authContext.user}`)
       .then((response) => response.json())
       .then((data) => {
         setAllStores(data);

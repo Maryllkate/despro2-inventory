@@ -19,7 +19,7 @@ function Login() {
 
   const authCheck = () => {
     setTimeout(() => {
-      fetch("https://cec2-backend.onrender.com/api/login")
+      fetch("https://despro2-inventory.onrender.com/api/login")
         .then((response) => response.json())
         .then((data) => {
           alert("Successfully Login");

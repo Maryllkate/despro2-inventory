@@ -23,7 +23,7 @@ export default function AddProduct({
   };
 
   const addProduct = () => {
-    fetch("https://cec2-backend.onrender.com/api/product/add", {
+    fetch("https://despro2-inventory.onrender.com/api/product/add", {
       method: "POST",
       headers: {
         "Content-type": "application/json",

@@ -27,7 +27,7 @@ export default function AddPurchaseDetails({
 
   // POST Data
   const addSale = () => {
-    fetch("https://cec2-backend.onrender.com/api/purchase/add", {
+    fetch("https://despro2-inventory.onrender.com/api/purchase/add", {
       method: "POST",
       headers: {
         "Content-type": "application/json",
