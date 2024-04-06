@@ -16,7 +16,6 @@ const app = express();
 // main();
 app.use(express.json());
 app.use(cors());
-app.use(cors({ origin: 'https://despro2.vercel.app' }));
 
 // database connection 
 // Connect to DB and start server
