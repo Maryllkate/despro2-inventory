@@ -23,7 +23,7 @@ export default function AddStore() {
   const cancelButtonRef = useRef(null);
 
   const addProduct = () => {
-    fetch("https://despro2-inventory.onrender.com/api/store/add", {
+    fetch("https://despro2-backend.onrender.com/api/store/add", {
       method: "POST",
       headers: {
         "Content-type": "application/json",

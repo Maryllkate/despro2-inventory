@@ -17,7 +17,7 @@ function PurchaseDetails() {
 
   // Fetching Data of All Purchase items
   const fetchPurchaseData = () => {
-    fetch(`https://despro2-inventory.onrender.com/api/purchase/get/${authContext.user}`)
+    fetch(`https://despro2-backend.onrender.com/api/purchase/get/${authContext.user}`)
       .then((response) => response.json())
       .then((data) => {
         setAllPurchaseData(data);

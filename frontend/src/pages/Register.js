@@ -21,7 +21,7 @@ function Register() {
 
   // Register User
   const registerUser = () => {
-    fetch("https://despro2-inventory.onrender.com/api/register", {
+    fetch("https://despro2-backend.onrender.com/api/register", {
       method: "POST",
       headers: {
         "Content-type": "application/json",
@@ -41,7 +41,7 @@ function Register() {
   const uploadImage = async (image) => {
     const data = new FormData();
     data.append("file", image);
-    data.append("upload_preset", "inventoryapp");
+    data.append("upload_preset", "k2tbbpqg");
 
     await fetch("https://api.cloudinary.com/v1_1/dmbpungbx/image/upload", {
       method: "POST",

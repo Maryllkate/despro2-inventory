@@ -28,7 +28,7 @@ export default function AddSale({
 
   // POST Data
   const addSale = () => {
-    fetch("https://despro2-inventory.onrender.com/api/sales/add", {
+    fetch("https://despro2-backend.onrender.com/api/sales/add", {
       method: "POST",
       headers: {
         "Content-type": "application/json",

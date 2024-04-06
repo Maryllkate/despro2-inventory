@@ -3,7 +3,7 @@ import AddProduct from "../components/AddProduct";
 import UpdateProduct from "../components/UpdateProduct";
 import AuthContext from "../AuthContext";
 
-function Inventory() {
+function backend() {
   const [showProductModal, setShowProductModal] = useState(false);
   const [showUpdateModal, setShowUpdateModal] = useState(false);
   const [updateProduct, setUpdateProduct] = useState([]);
@@ -24,7 +24,7 @@ function Inventory() {
 
   // Fetching Data of All Products
   const fetchProductsData = () => {
-    fetch(`https://despro2-inventory.onrender.com/api/product/get/${authContext.user}`)
+    fetch(`https://despro2-backend.onrender.com/api/product/get/${authContext.user}`)
       .then((response) => response.json())
       .then((data) => {
         setAllProducts(data);
@@ -34,7 +34,7 @@ function Inventory() {
 
   // Fetching Data of Search Products
   const fetchSearchData = () => {
-    fetch(`https://despro2-inventory.onrender.com/api/product/search?searchTerm=${searchTerm}`)
+    fetch(`https://despro2-backend.onrender.com/api/product/search?searchTerm=${searchTerm}`)
       .then((response) => response.json())
       .then((data) => {
         setAllProducts(data);
@@ -44,7 +44,7 @@ function Inventory() {
 
   // Fetching all stores data
   const fetchSalesData = () => {
-    fetch(`https://despro2-inventory.onrender.com/api/store/get/${authContext.user}`)
+    fetch(`https://despro2-backend.onrender.com/api/store/get/${authContext.user}`)
       .then((response) => response.json())
       .then((data) => {
         setAllStores(data);
@@ -67,8 +67,8 @@ function Inventory() {
   // Delete item
   const deleteItem = (id) => {
     console.log("Product ID: ", id);
-    console.log(`https://despro2-inventory.onrender.com/api/product/delete/${id}`);
-    fetch(`https://despro2-inventory.onrender.com/api/product/delete/${id}`)
+    console.log(`https://despro2-backend.onrender.com/api/product/delete/${id}`);
+    fetch(`https://despro2-backend.onrender.com/api/product/delete/${id}`)
       .then((response) => response.json())
       .then((data) => {
         setUpdatePage(!updatePage);
@@ -90,7 +90,7 @@ function Inventory() {
     <div className="col-span-12 lg:col-span-10  flex justify-center">
       <div className=" flex flex-col gap-5 w-11/12">
         <div className="bg-white rounded p-3">
-          <span className="font-semibold px-4">Overall Inventory</span>
+          <span className="font-semibold px-4">Overall backend</span>
           <div className=" flex flex-col md:flex-row justify-center items-center  ">
             <div className="flex flex-col p-10  w-full  md:w-3/12  ">
               <span className="font-semibold text-blue-600 text-base">
@@ -211,7 +211,7 @@ function Inventory() {
                 className="bg-blue-500 hover:bg-blue-700 text-white font-bold p-2 text-xs  rounded"
                 onClick={addProductModalSetting}
               >
-                {/* <Link to="/inventory/add-product">Add Product</Link> */}
+                {/* <Link to="/backend/add-product">Add Product</Link> */}
                 Add Product
               </button>
             </div>
@@ -284,4 +284,4 @@ function Inventory() {
   );
 }
 
-export default Inventory;
+export default backend;
