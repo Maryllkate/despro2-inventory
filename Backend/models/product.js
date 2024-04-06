@@ -7,6 +7,10 @@ const ProductSchema = new mongoose.Schema(
       ref: 'users',
       required: true,
     },
+    rfidID: {
+      type: String,
+      required: true,
+    },
     name: {
       type: String,
       required: true,
