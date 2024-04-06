@@ -7,6 +7,7 @@ const addProduct = (req, res) => {
   console.log("req: ", req.body.userId);
   const addProduct = new Product({
     userID: req.body.userId,
+    rfidID: req.body.rfidID,
     name: req.body.name,
     manufacturer: req.body.manufacturer,
     stock: 0,
