@@ -10,7 +10,7 @@ const addProduct = (req, res) => {
     rfidID: req.body.rfidID,
     name: req.body.name,
     manufacturer: req.body.manufacturer,
-    stock: 0,
+    stock: req.body.stock,
     description: req.body.description,
   });
 
