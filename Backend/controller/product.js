@@ -5,24 +5,30 @@ const Sales = require("../models/sales");
 // Add Post
 const addProduct = (req, res) => {
   console.log("req: ", req.body.userId);
-  const addProduct = new Product({
-    userID: req.body.userId,
-    rfidID: req.body.rfidID,
-    name: req.body.name,
-    manufacturer: req.body.manufacturer,
-    stock: req.body.stock,
-    description: req.body.description,
-  });
-
-  addProduct
-    .save()
-    .then((result) => {
+  Product.findOne({ rfidID: req.body.rfidID })
+    .then(existingProduct => {
+      if (existingProduct) {
+        return res.status(400).json({ error: 'Product with this RFID ID already exists' });
+      } else {
+        const newProduct = new Product({
+          userID: req.body.userId,
+          rfidID: req.body.rfidID,
+          name: req.body.name,
+          manufacturer: req.body.manufacturer,
+          stock: req.body.stock,
+          description: req.body.description,
+        });
+        return newProduct.save();
+      }
+    })
+    .then(result => {
       res.status(200).send(result);
     })
-    .catch((err) => {
-      res.status(402).send(err);
+    .catch(err => {
+      res.status(500).send({ error: 'Internal server error' });
     });
 };
+
 
 // Get All Products
 const getAllProducts = async (req, res) => {
