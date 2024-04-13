@@ -31,8 +31,6 @@ const addProduct = (req, res) => {
     });
 };
 
-
-
 // Get All Products
 const getAllProducts = async (req, res) => {
   const findAllProducts = await Product.find({
