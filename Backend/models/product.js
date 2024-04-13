@@ -5,7 +5,7 @@ const ProductSchema = new mongoose.Schema(
     userID: {
       type: mongoose.Schema.Types.ObjectId,
       ref: 'users',
-      required: false,
+      required: true,
     },
     rfidID: {
       type: String,

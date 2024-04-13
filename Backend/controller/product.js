@@ -4,7 +4,8 @@ const Sales = require("../models/sales");
 
 // Add Post
 const addProduct = (req, res) => {
-  console.log("req: ", req.body.userId);
+  console.log("req userId: ", req.body.userId);
+  
   Product.findOne({ rfidID: req.body.rfidID })
     .then(existingProduct => {
       if (existingProduct) {
@@ -22,13 +23,14 @@ const addProduct = (req, res) => {
       }
     })
     .then(result => {
-      res.status(200).send(result);
+      res.status(200).json(result);
     })
     .catch(err => {
-      res.status(500).send({ error: 'Internal server error' });
-      console.log(error)
+      console.error(err);
+      res.status(500).json({ error: 'Internal server error' });
     });
 };
+
 
 
 // Get All Products
