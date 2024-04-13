@@ -18,7 +18,7 @@ app.use(express.json());
 app.use(cors());
 
 const corsOptions = {
-  origin: ['http://127.0.0.1:5500', 'http://192.168.254.130'],
+  origin: ['http://127.0.0.1:5500', 'http://192.168.254.130', 'https://despro2.vercel.app'],
   optionsSuccessStatus: 200 
 }
 
