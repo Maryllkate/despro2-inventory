@@ -15,21 +15,13 @@ const app = express();
 // const PORT = 4000;
 // main();
 app.use(express.json());
-app.use(cors());
 
 const corsOptions = {
-  origin: 'http://http://192.168.254.130/',
+  origin: ['http://127.0.0.1:5500', 'http://192.168.254.130'],
   optionsSuccessStatus: 200 
 }
 
 app.use(cors(corsOptions));
-
-const corsLocal = {
-  origin: 'http://127.0.0.1:5500/product-registration.html/',
-  optionsSuccessStatus: 200 
-}
-
-app.use(cors(corsLocal));
 
 // database connection 
 // Connect to DB and start server
