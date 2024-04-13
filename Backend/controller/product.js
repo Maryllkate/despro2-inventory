@@ -26,6 +26,7 @@ const addProduct = (req, res) => {
     })
     .catch(err => {
       res.status(500).send({ error: 'Internal server error' });
+      console.log(error)
     });
 };
 
