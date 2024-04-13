@@ -15,6 +15,7 @@ const app = express();
 // const PORT = 4000;
 // main();
 app.use(express.json());
+app.use(cors());
 
 const corsOptions = {
   origin: ['http://127.0.0.1:5500', 'http://192.168.254.130'],
@@ -22,7 +23,6 @@ const corsOptions = {
 }
 
 app.use(cors(corsOptions));
-app.options('*', cors(corsOptions));
 
 // database connection 
 // Connect to DB and start server
