@@ -15,6 +15,7 @@ const addProduct = (req, res) => {
           userID: req.body.userId,
           rfidID: req.body.rfidID,
           name: req.body.name,
+          price: req.body.price,
           manufacturer: req.body.manufacturer,
           stock: req.body.stock,
           description: req.body.description,
