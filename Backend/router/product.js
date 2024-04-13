@@ -8,6 +8,9 @@ app.post("/add", product.addProduct);
 // Get All Products
 app.get("/get/:userId", product.getAllProducts);
 
+// Get One Product
+app.get("/get/one/:rfidID", product.getOneProduct);
+
 // Delete Selected Product Item
 app.get("/delete/:id", product.deleteSelectedProduct);
 

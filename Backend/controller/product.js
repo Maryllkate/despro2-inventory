@@ -45,6 +45,19 @@ const getAllProducts = async (req, res) => {
   }
 };
 
+//GET one product
+const getOneProduct = async (req, res) => {
+  try {
+    const { rfidID } = req.params;
+    const products = await Product.findOne({ rfidID });
+    res.json(products);
+} catch (error) {
+    res.status(500).json({ message: error.message });
+}
+};
+
+
+
 
 // Delete Selected Product
 const deleteSelectedProduct = async (req, res) => {
@@ -93,6 +106,7 @@ const searchProduct = async (req, res) => {
 module.exports = {
   addProduct,
   getAllProducts,
+  getOneProduct,
   deleteSelectedProduct,
   updateSelectedProduct,
   searchProduct,

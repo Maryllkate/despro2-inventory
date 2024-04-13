@@ -4,7 +4,7 @@ import UpdateProduct from "../components/UpdateProduct";
 import AuthContext from "../AuthContext";
 
 function Inventory() {
-  // const [showProductModal, setShowProductModal] = useState(false);
+  //const [showProductModal, setShowProductModal] = useState(false);
   const [showUpdateModal, setShowUpdateModal] = useState(false);
   const [updateProduct, setUpdateProduct] = useState([]);
   const [products, setAllProducts] = useState([]);
