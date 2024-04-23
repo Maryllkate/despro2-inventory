@@ -50,7 +50,7 @@ const getAllProducts = async (req, res) => {
 const getOneProduct = async (req, res) => {
   try {
     const { rfidID } = req.params;
-    const products = await Product.find({ rfidID });
+    const products = await Product.findOne({ rfidID });
     res.json(products);
 } catch (error) {
     res.status(500).json({ message: error.message });
