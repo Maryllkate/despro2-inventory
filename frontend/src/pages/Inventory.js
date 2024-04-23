@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useContext } from "react";
-// import AddProduct from "../components/AddProduct";
+import AddProduct from "../components/AddProduct";
 import UpdateProduct from "../components/UpdateProduct";
 import AuthContext from "../AuthContext";
 
 function Inventory() {
-  //const [showProductModal, setShowProductModal] = useState(false);
+  const [showProductModal, setShowProductModal] = useState(false);
   const [showUpdateModal, setShowUpdateModal] = useState(false);
   const [updateProduct, setUpdateProduct] = useState([]);
   const [products, setAllProducts] = useState([]);
@@ -51,10 +51,10 @@ function Inventory() {
       });
   };
 
-  // Modal for Product ADD
-  // const addProductModalSetting = () => {
-  //   setShowProductModal(!showProductModal);
-  // };
+  //Modal for Product ADD
+  const addProductModalSetting = () => {
+    setShowProductModal(!showProductModal);
+  };
 
   // Modal for Product UPDATE
   const updateProductModalSetting = (selectedProductData) => {
@@ -76,9 +76,9 @@ function Inventory() {
   };
 
   // Handle Page Update
-  // const handlePageUpdate = () => {
-  //   setUpdatePage(!updatePage);
-  // };
+  const handlePageUpdate = () => {
+    setUpdatePage(!updatePage);
+  };
 
   // Handle Search Term
   const handleSearchTerm = (e) => {
@@ -173,12 +173,12 @@ function Inventory() {
           </div>
         </div>
 
-        {/* {showProductModal && (
+        {showProductModal && (
           <AddProduct
             addProductModalSetting={addProductModalSetting}
             handlePageUpdate={handlePageUpdate}
           />
-        )} */}
+        )}
         {showUpdateModal && (
           <UpdateProduct
             updateProductData={updateProduct}
@@ -206,15 +206,15 @@ function Inventory() {
                 />
               </div>
             </div>
-            {/* <div className="flex gap-4">
+            <div className="flex gap-4">
               <button
                 className="bg-blue-500 hover:bg-blue-700 text-white font-bold p-2 text-xs  rounded"
                 onClick={addProductModalSetting}
               >
-                 <Link to="/Inventory/add-product">Add Product</Link> 
+                 {/* <Link to="/Inventory/add-product">Add Product</Link>  */}
                 Add Product
               </button>
-            </div> */}
+            </div>
           </div>
           <table className="min-w-full divide-y-2 divide-gray-200 text-sm">
             <thead>

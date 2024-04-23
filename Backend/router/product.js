@@ -11,6 +11,8 @@ app.get("/get/:userId", product.getAllProducts);
 // Get One Product
 app.get("/get/one/:rfidID", product.getOneProduct);
 
+app.get("/get/:rfidID", product.getProducts);
+
 // Delete Selected Product Item
 app.get("/delete/:id", product.deleteSelectedProduct);
 

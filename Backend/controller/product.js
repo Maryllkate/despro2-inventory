@@ -50,14 +50,23 @@ const getAllProducts = async (req, res) => {
 const getOneProduct = async (req, res) => {
   try {
     const { rfidID } = req.params;
-    const products = await Product.findOne({ rfidID });
+    const products = await Product.find({ rfidID });
     res.json(products);
 } catch (error) {
     res.status(500).json({ message: error.message });
 }
 };
 
-
+//GET all product
+const getProducts = async (req, res) => {
+  try {
+    const { rfidID } = req.params;
+    const products = await Product.find ({ rfidID });
+    res.json(products);
+  } catch (error) {
+    res.status(500).json({ message: error.message })
+  }
+}
 
 
 // Delete Selected Product
@@ -108,6 +117,7 @@ module.exports = {
   addProduct,
   getAllProducts,
   getOneProduct,
+  getProducts,
   deleteSelectedProduct,
   updateSelectedProduct,
   searchProduct,

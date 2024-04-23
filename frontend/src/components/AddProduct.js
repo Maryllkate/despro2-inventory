@@ -90,15 +90,15 @@ export default function AddProduct({
                         <div className="grid gap-4 mb-4 sm:grid-cols-2">
                         <div>
                             <label
-                              htmlFor="name"
+                              htmlFor="rfidID"
                               className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                             >
                               RFID ID:
                             </label>
                             <input
                               type="text"
-                              name="name"
-                              id="name"
+                              name="rfidID"
+                              id="rfidID"
                               value={product.rfidID}
                               onChange={(e) =>
                                 handleInputChange(e.target.rfidID, e.target.value)
