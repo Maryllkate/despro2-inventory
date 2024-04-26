@@ -38,33 +38,26 @@ function Store() {
           </button>
         </div>
         {showModal && <AddStore />}
-        {stores.map((element, index) => {
-          return (
-            <div
-              className="bg-white w-50 h-fit flex flex-col gap-4 p-4 "
-              key={element._id}
-            >
-              <div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+          {stores.map((element, index) => {
+            return (
+              <div
+                className="bg-white w-full rounded-lg overflow-hidden shadow-md"
+                key={element._id}
+              >
                 <img
                   alt="store"
                   className="h-60 w-full object-cover"
                   src={element.image}
                 />
-              </div>
-              <div className="flex flex-col gap-3 justify-between items-start">
-                <span className="font-bold">{element.name}</span>
-                <div className="flex">
-                  <img
-                    alt="location-icon"
-                    className="h-6 w-6"
-                    src={require("../assets/location-icon.png")}
-                  />
-                  <span>{element.address + ", " + element.city}</span>
+                <div className="p-4">
+                  <h3 className="text-lg font-bold mb-2">{element.name}</h3>
+                  <p className="text-sm mb-2">{element.address}, {element.city}</p>
                 </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
       </div>
     </div>
   );
