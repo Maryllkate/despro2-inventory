@@ -178,8 +178,6 @@ export default function AddProduct({
                               type="number"
                               name="stock"
                               id="stock"
-                              value="1"
-                              disabled
                               onChange={(e) =>
                                 handleInputChange("stock", e.target.value) // Pass "stock" as the key
                               }

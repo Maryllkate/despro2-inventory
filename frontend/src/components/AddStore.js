@@ -162,7 +162,7 @@ export default function AddStore() {
                               <option value="Groceries">Groceries</option>
                               <option value="Wholesale">WholeSale</option>
                               <option value="SuperMart">SuperMart</option>
-                              <option value="Phones">Phones</option>
+                              <option value="Phones">Others</option>
                             </select>
                           </div>
                           <div className="sm:col-span-2">
